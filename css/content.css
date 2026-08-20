@@ -652,3 +652,28 @@
     font-size: 1.3rem;
   }
 }
+
+/* =========================
+   Paper hero image
+   ========================= */
+
+.content .paper-figure {
+  margin: 32px 0 40px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  aspect-ratio: 16 / 7;
+}
+
+.content .paper-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 620px) {
+  .content .paper-figure { aspect-ratio: 4 / 3; margin: 26px 0 32px; }
+}

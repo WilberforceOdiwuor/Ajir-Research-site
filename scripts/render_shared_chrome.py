@@ -13,6 +13,7 @@ PAGES = [
     ROOT / 'faq.html',
     ROOT / 'team.html',
     ROOT / 'Research' / 'index.html',
+    ROOT / 'Research' / 'overview.html',
     ROOT / 'Research' / 'algorithmic-abdication.html',
     ROOT / 'Research' / 'algorithmic-radicalization.html',
     ROOT / 'Research' / 'epistemic-passivity.html',

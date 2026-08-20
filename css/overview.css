@@ -1,0 +1,551 @@
+/* =========================================================
+   overview.css — Research Overview only.
+   Scoped under .overview so no other page is affected.
+   Monochrome: black, white, grey. Type families come from
+   base.css; colours from theme.css. Nothing is redefined here.
+   ========================================================= */
+
+.overview {
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Shared inner rail — matches header/footer at 1040px */
+.ov-wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.ov-wrap--narrow {
+  max-width: 720px;
+}
+
+.overview section {
+  padding: clamp(4.5rem, 10vw, 7.5rem) 0;
+}
+
+.overview .ov-hero {
+  padding-top: clamp(3rem, 7vw, 5rem);
+}
+
+/* ---------------------------------------------------------
+   Type — sizes tuned for whitespace, families untouched
+   --------------------------------------------------------- */
+
+.ov-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0 0 1.75rem;
+}
+
+.ov-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.1rem, 5.6vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  color: var(--text-strong);
+  text-align: center;
+  margin: 0 auto;
+  max-width: 17ch;
+  text-wrap: balance;
+}
+
+.ov-lede {
+  font-family: var(--font-mono);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 1.75rem auto 0;
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+
+.ov-section-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--text-strong);
+  text-align: center;
+  margin: 0 auto;
+  max-width: 24ch;
+  text-wrap: balance;
+}
+
+.ov-section-lede {
+  font-family: var(--font-mono);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 1.25rem auto 0;
+  max-width: 60ch;
+}
+
+/* The three descriptive paragraphs */
+.ov-prose {
+  max-width: 66ch;
+  margin: clamp(2.5rem, 6vw, 3.5rem) auto 0;
+}
+
+.ov-prose p {
+  font-family: var(--font-mono);
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin: 0 0 1.75rem;
+}
+
+.ov-prose p:last-child { margin-bottom: 0; }
+
+.ov-rule-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+}
+
+/* ---------------------------------------------------------
+   Buttons — white, black, grey only
+   --------------------------------------------------------- */
+
+.ov-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.ov-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-strong);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.ov-btn:hover {
+  border-color: var(--border-strong);
+  background: var(--surface);
+}
+
+/* Solid: black on white, white on black — flips with the theme */
+.ov-btn--solid {
+  background: var(--text-strong);
+  border-color: var(--text-strong);
+  color: var(--bg);
+}
+
+.ov-btn--solid:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
+}
+
+.ov-btn--ghost {
+  background: none;
+  border-color: transparent;
+  padding-inline: 0.25rem;
+  color: var(--text-muted);
+}
+
+.ov-btn--ghost:hover {
+  background: none;
+  border-color: transparent;
+  color: var(--text-strong);
+}
+
+/* ---------------------------------------------------------
+   Figures — the paintings. Frames crop via object-fit.
+   A missing file leaves a quiet grey block, not a broken icon.
+   --------------------------------------------------------- */
+
+.ov-figure {
+  position: relative;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+}
+
+.ov-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* frame crop */
+  object-position: center;
+}
+
+.ov-figure--hero {
+  aspect-ratio: 16 / 7;
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  border-radius: 12px;
+}
+
+/* The hero painting is portrait, so a 16:7 band shows only a third of it.
+   Bias the crop upward to keep the white-to-red transition rather than
+   landing on the solid red field below it. */
+.ov-figure--hero img { object-position: center 15%; }
+
+.ov-figure--wide   { aspect-ratio: 16 / 9; }
+/* Portrait: the paintings are ~2:3, so a landscape card frame would crop
+   away most of the composition and leave an empty white band. */
+.ov-figure--card   { aspect-ratio: 4 / 5; }
+.ov-figure--square { aspect-ratio: 1 / 1; }
+
+/* ---------------------------------------------------------
+   Policy, ethics & legal frameworks
+   --------------------------------------------------------- */
+
+.ov-frameworks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+}
+
+.ov-framework {
+  padding: 1.6rem 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.ov-framework__scope {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 0.6rem;
+}
+
+.ov-framework__name {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 650;
+  color: var(--text-strong);
+  margin: 0 0 0.6rem;
+}
+
+.ov-framework__body {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   Publications — filters + horizontal rails
+   --------------------------------------------------------- */
+
+/* `hidden` has to outrank the display values set below. */
+.overview [hidden],
+.ov-rail-group[hidden] {
+  display: none !important;
+}
+
+.ov-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.ov-filters button {
+  appearance: none;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.ov-filters button:hover {
+  color: var(--text-strong);
+  border-color: var(--border);
+}
+
+.ov-filters button[aria-pressed="true"] {
+  background: var(--text-strong);
+  color: var(--bg);
+  border-color: var(--text-strong);
+}
+
+.ov-rail-group { margin-top: clamp(3rem, 6vw, 4.5rem); }
+
+.ov-rail-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ov-rail-title {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
+  margin: 0;
+}
+
+/* Newest first, scrolls horizontally, bleeds to the viewport edge */
+.ov-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(266px, 320px);
+  gap: 1.25rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding: 0.25rem 25px 1.5rem;
+  margin-inline: calc(50% - 50vw);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* Keep the first card aligned to the 1040px rail on wide screens */
+@media (min-width: 1090px) {
+  .ov-rail { padding-inline: max(25px, calc(50vw - 520px)); }
+}
+
+.ov-rail::-webkit-scrollbar { height: 6px; }
+.ov-rail::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.ov-rail > [role="listitem"] { display: flex; }
+
+.ov-card {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.9rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.ov-card .ov-figure {
+  flex: none;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.ov-card:hover .ov-figure {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.ov-card__title {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: var(--text-strong);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ov-card__meta {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.ov-card__type { color: var(--text-muted); }
+
+.ov-rail-empty {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--text-faint);
+  text-align: center;
+  margin: 2rem 0 0;
+}
+
+/* ---------------------------------------------------------
+   Modal
+   --------------------------------------------------------- */
+
+.ov-modal {
+  width: min(680px, calc(100vw - 2.5rem));
+  max-height: min(84vh, 900px);
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.ov-modal::backdrop {
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.ov-modal__scroll {
+  max-height: min(84vh, 900px);
+  overflow-y: auto;
+  padding: 2rem clamp(1.4rem, 4vw, 2.5rem) 2.5rem;
+}
+
+.ov-modal__close {
+  position: sticky;
+  top: 0;
+  float: right;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ov-modal__close:hover {
+  border-color: var(--border-strong);
+  color: var(--text-strong);
+}
+
+.ov-modal__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  margin: 0 0 0.9rem;
+}
+
+.ov-modal__title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 650;
+  line-height: 1.28;
+  letter-spacing: -0.012em;
+  color: var(--text-strong);
+  margin: 0 0 1.5rem;
+  max-width: 34ch;
+}
+
+.ov-modal__label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 0.7rem;
+}
+
+.ov-modal__abstract {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin: 0 0 2rem;
+}
+
+.ov-modal__findings {
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.ov-modal__findings li {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  padding-left: 1.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.ov-modal__findings li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 1px;
+  background: var(--text-faint);
+}
+
+/* ---------------------------------------------------------
+   Closing
+   --------------------------------------------------------- */
+
+.ov-closing {
+  border-radius: 16px;
+  background: var(--surface-2);
+  padding: clamp(3.5rem, 9vw, 5.5rem) 1.5rem;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------
+   Responsive
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .ov-frameworks { grid-template-columns: 1fr; gap: 0; }
+  .ov-framework { margin-top: 1.75rem; }
+}
+
+@media (max-width: 620px) {
+  .ov-figure--hero { aspect-ratio: 4 / 3; }
+  .ov-rail { grid-auto-columns: minmax(240px, 78vw); }
+  .ov-rail-head { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+  .ov-prose p { font-size: 0.94rem; line-height: 1.8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ov-btn,
+  .ov-card .ov-figure { transition: none; }
+  .ov-card:hover .ov-figure { transform: none; }
+}

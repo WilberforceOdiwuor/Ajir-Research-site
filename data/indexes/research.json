@@ -5,35 +5,80 @@
       "summary": "A note on human dignity, the Encyclical Magnifica Humanitas, and how Ajir Research Labs translates those principles into its legal and AI disclosure framework.",
       "type": "Note",
       "date": "2026-07-06",
-      "path": "../Research/human-dignity.html"
+      "path": "../Research/human-dignity.html",
+      "slug": "human-dignity",
+      "pillar": "policy",
+      "abstract": "This note reads the Encyclical Magnifica Humanitas as a direct moral intervention in the design of contemporary technology. Its central claim is simple: human dignity is not a decorative principle, but the highest reference point for social, legal, and technical order. In the context of Ajir Research Labs, that claim becomes operational rather than merely reflective. The note argues that systems built for media interpretation, public reasoning, and AI disclosure must keep human judgment at the center, resist commodification of persons, and preserve transparency as a structural requirement.",
+      "findings": [
+        "Dignity is treated as the highest reference point for legal and technical order, not a decorative principle.",
+        "Systems for media interpretation and public reasoning must keep human judgment at the centre.",
+        "Transparency is framed as a structural requirement rather than a compliance gesture."
+      ],
+      "image": "../assets/images/research/human-dignity.jpg"
     },
     {
       "title": "Algorithmic Abdication and Intellectual Atrophy in the Era of Generative AI",
       "summary": "A literature review on cognitive offloading, intellectual atrophy, and the governance strategies needed to preserve human agency in AI-assisted work.",
       "type": "Research",
       "date": "2026-03-27",
-      "path": "../Research/algorithmic-abdication.html"
+      "path": "../Research/algorithmic-abdication.html",
+      "slug": "algorithmic-abdication",
+      "pillar": "cognition",
+      "abstract": "This literature review looks into the critical interconnection between algorithmic abdication and intellectual atrophy within the context of increasing human-AI integration. As human agents routinely delegate cognitive tasks to Large Language Models and automated systems, research indicates a shift from machines serving as cognitive amplifiers to becoming cognitive crutches. This review synthesises findings on cognitive offloading, the Google Effect, and the accumulation of cognitive debt, which together lead to the erosion of important intellectual habits such as reflection and critical thinking. It also highlights the paradoxical vulnerability of tech-native populations and proposes design-based interventions, such as friction-based AI, to preserve human intellectual agency in the digital age.",
+      "findings": [
+        "Routine delegation shifts machines from cognitive amplifiers to cognitive crutches.",
+        "Cognitive offloading, the Google Effect, and accumulated cognitive debt erode reflection and critical thinking.",
+        "Tech-native populations show paradoxical vulnerability; friction-based AI is proposed as a design intervention."
+      ],
+      "image": "../assets/images/research/algorithmic-abdication.jpg"
     },
     {
       "title": "The Digital Funnel: Revealing the Techniques of Algorithmic Radicalization",
       "summary": "An analysis of how recommendation systems, engagement optimization, and filter bubbles can steer users toward extremist belief environments.",
       "type": "Note",
       "date": "2026-03-26",
-      "path": "../Research/algorithmic-radicalization.html"
+      "path": "../Research/algorithmic-radicalization.html",
+      "slug": "algorithmic-radicalization",
+      "pillar": "misinformation",
+      "abstract": "In the mid-2020s, a convergence of cognitive psychology and machine learning has produced a documented sociological phenomenon: algorithmic radicalization. This paper examines how social media recommendation systems methodically steer users from moderate interests toward extreme ideologies, driven not by human preference but by engagement-maximising architectures. Through an analysis of three core mechanisms — recommender system dynamics, engagement farming, and filter bubble entrenchment — this review argues that radicalization is a structural by-product of attention-economy design, and proposes transparency and digital literacy as foundational countermeasures.",
+      "findings": [
+        "Recommendation systems steer users from moderate interests toward extreme ideologies.",
+        "Three mechanisms drive the funnel: recommender dynamics, engagement farming, and filter-bubble entrenchment.",
+        "Radicalization is a structural by-product of attention-economy design, not of user preference."
+      ],
+      "image": "../assets/images/research/algorithmic-radicalization.jpg"
     },
     {
       "title": "Epistemic Passivity",
       "summary": "A review of how generative AI can weaken active knowledge formation when users treat machine output as an oracle instead of a tool for inquiry.",
       "type": "Research",
       "date": "2026-03-25",
-      "path": "../Research/epistemic-passivity.html"
+      "path": "../Research/epistemic-passivity.html",
+      "slug": "epistemic-passivity",
+      "pillar": "cognition",
+      "abstract": "This review collectively demystifies the complex relationship between artificial intelligence, human cognition, and epistemic agency. It investigates how the increasing incorporation of generative AI into daily life, education, and professional work is restructuring how humans think, learn, and justify their beliefs. The review argues that however much AI offers immense potential for efficiency and personalised support, its misuse results in epistemic passivity and cognitive atrophy. The consensus suggests that maintaining human epistemic agency requires mindful engagement, critical oversight, and the use of AI as a tool for inquiry rather than an authoritative oracle that does away with human intellectual autonomy.",
+      "findings": [
+        "Generative AI is restructuring how people think, learn, and justify belief.",
+        "Misuse produces epistemic passivity and cognitive atrophy rather than augmentation.",
+        "Agency depends on treating AI as an instrument of inquiry, not an authoritative oracle."
+      ],
+      "image": "../assets/images/research/epistemic-passivity.jpg"
     },
     {
       "title": "Intellectual Abdication Effect of AI and Internet and Its Role in the Erosion of Intelligence and the Rise of Algorithmic Radicalization",
       "summary": "A synthesis of research connecting cognitive offloading, distributed atrophy, and the increased susceptibility created by algorithmic manipulation.",
       "type": "Research",
       "date": "2026-03-24",
-      "path": "../Research/intellectual-abdication-effect-of-ai.html"
+      "path": "../Research/intellectual-abdication-effect-of-ai.html",
+      "slug": "intellectual-abdication-effect-of-ai",
+      "pillar": "misinformation",
+      "abstract": "This literature review investigates the phenomenon of intellectual abdication — the transfer of mental work to external systems — and its impact on the degradation of human intelligence and the ascent of algorithmic radicalization. As generative AI and LLMs become more embedded in people's lives, they offer an act of rapid offloading that shifts cognitive dispositions and disrupts the metacognitive friction needed to foster deep learning. Analysing the Distributed Atrophy Model, this review demonstrates the disengagement process as a cascade: cognitive offloading, followed by reduced representational strain, the loss of internal abstraction, and ultimately representational atrophy. The cognitive vacuum and epistemic stagnation that result render the individual an ideal subject for extremist manipulation.",
+      "findings": [
+        "The Distributed Atrophy Model traces a cascade from offloading to representational atrophy.",
+        "Bypassing generative abstraction contributes to digital amnesia and erodes critical cognition.",
+        "The resulting cognitive vacuum makes individuals ideal subjects for extremist manipulation."
+      ],
+      "image": "../assets/images/research/intellectual-abdication-effect-of-ai.jpg"
     }
   ]
 }
