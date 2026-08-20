@@ -89,6 +89,20 @@
   max-width: 60ch;
 }
 
+/* Focus-areas statement — the one large claim on the page */
+.ov-statement {
+  font-family: var(--font-sans);
+  font-size: clamp(1.35rem, 3.1vw, 2rem);
+  font-weight: 600;
+  line-height: 1.34;
+  letter-spacing: -0.015em;
+  color: var(--text-strong);
+  text-align: center;
+  margin: 0 auto;
+  max-width: 34ch;
+  text-wrap: balance;
+}
+
 /* The three descriptive paragraphs */
 .ov-prose {
   max-width: 66ch;
@@ -523,7 +537,7 @@
 
 .ov-closing {
   border-radius: 16px;
-  background: var(--surface-2);
+  background: var(--surface-grey);
   padding: clamp(3.5rem, 9vw, 5.5rem) 1.5rem;
   text-align: center;
 }
